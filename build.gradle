@@ -1,8 +1,23 @@
 buildscript {
-  ext.kotlinVersion = '1.2.31'
+  ext.kotlinVersion = '1.2.50'
   repositories {
+    mavenLocal()
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    maven {url 'http://maven.aliyun.com/nexus/content/repositories/google'}
+    maven {
+      credentials {
+        username "mvn_read_ws"
+        password "mrk8929"
+      }
+      url "http://mvn.cloud.alipay.com/nexus/content/repositories/releases/"
+    }
+    maven {
+      url "http://developer.huawei.com/repo/"
+    }
+    maven {
+      url "http://qt.qunar.com/package/mvn/repository/maven-qim/"
+    }
     google()
-    jcenter()
   }
   dependencies {
     classpath 'com.android.tools.build:gradle:3.1.0'
@@ -12,8 +27,23 @@ buildscript {
 
 allprojects {
   repositories {
+    mavenLocal()
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    maven {url 'http://maven.aliyun.com/nexus/content/repositories/google'}
+    maven {
+      credentials {
+        username "mvn_read_ws"
+        password "mrk8929"
+      }
+      url "http://mvn.cloud.alipay.com/nexus/content/repositories/releases/"
+    }
+    maven {
+      url "http://developer.huawei.com/repo/"
+    }
+    maven {
+      url "http://qt.qunar.com/package/mvn/repository/maven-qim/"
+    }
     google()
-    jcenter()
   }
 }
 
@@ -57,6 +87,6 @@ ext.deps = [
     robolectric       : 'org.robolectric:robolectric:3.3',
     mockito           : "org.mockito:mockito-core:2.8.9",
     json              : "org.json:json:20160810",
-    supportAnnotations: "com.android.support:support-annotations:27.1.0",
+    supportAnnotations: "com.android.support:support-annotations:26.1.0",
     kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 ]
